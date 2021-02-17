@@ -1,5 +1,5 @@
-import '../App.css' ;
-export default function QuantityCard() {
+import '../../App.css' ;
+export default function QuantityProduct() {
 
 
     return(
@@ -14,8 +14,8 @@ export default function QuantityCard() {
                     <div className="col-auto">
                         <i className="fas fa-clipboard-list fa-2x text-gray-300"></i>
                     </div>
-                </div>
-            </div>
+               </div>     </div>
+        
         </div>
     </div>
     )
