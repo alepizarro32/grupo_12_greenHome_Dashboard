@@ -4,14 +4,20 @@ import '../../App.css' ;
 
 export default function ContentLastProd(props) {
 
+let [ name , setName ] = useState ('')
+
 let [ description , setDescription ] = useState('Loading...')
+
+let [ image, setImage ] = useState()
+
+
+useEffect(()=>{
+    setName(props.data.name)
+ });
 
 useEffect(()=>{
     setDescription(props.data.description)
  });
-
- let [ image, setImage ] = useState()
-
 
 useEffect(()=>{
     setImage(props.data.image)
@@ -24,7 +30,7 @@ useEffect(()=>{
             <div className="card shadow mb-4">
                 <div className="card-header py-3">
 					{ props.data ? 
-                    <h6 className="m-0 text-primary font-weight-bold">Last product: <span className='font-weight-medium'>{props.data.name}</span> </h6> :
+                    <h6 className="m-0 text-primary font-weight-bold">Last product: <span className='font-weight-medium'>{name}</span> </h6> :
                     <div class="spinner-border" role="status">
                             <span class="sr-only">Loading...</span>
                             </div>

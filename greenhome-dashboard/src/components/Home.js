@@ -1,5 +1,4 @@
 import '../App.css' ;
-import cors from 'cors'
 import '../components/Home.css' ;
 import ContentRow from '../components/Quantity/ContentRow';
 import Row from '../components/Row';
@@ -13,17 +12,17 @@ export default function Home() {
 
     const LoadData = () => {
         
-    useEffect(()=>{
-        fetch('http://localhost:3000/api/products').then(res => res.json()).then(results => setProducts(results));
-    });
+            useEffect(()=>{
+                (products.length == 0) && fetch('http://localhost:3000/api/products').then(res => res.json()).then(results => setProducts(results));
+            });
 
-    useEffect(()=>{
-       fetch('http://localhost:3000/api/users').then(res=> res.json()).then(results => setUsers(results))  
-    })
-      
+            useEffect(()=>{
+                (users.length == 0) && fetch('http://localhost:3000/api/users').then(res=> res.json()).then(results => setUsers(results))
+            })
+                
     }
 
-    document.addEventListener('load', LoadData())
+   LoadData()
 
     return(
         <div className='home'>
