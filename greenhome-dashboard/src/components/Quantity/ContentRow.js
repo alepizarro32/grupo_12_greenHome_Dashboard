@@ -1,20 +1,18 @@
 import '../../App.css' ;
 import QuantityProduct from './QuantityProduct';
-import AmountProduct from './AmountProduct'
-import UserQuantity from './UserQuantity'
-
-export default function ContentRow() {
+export default function ContentRow(props) {
 
 
     return(
         <div className="row">
 
-            <QuantityProduct />
+            <QuantityProduct data={props.products} />
 
-            <QuantityProduct />
+            <QuantityProduct data={props.users}/>
             
-            <QuantityProduct />
+            <QuantityProduct data={props.products.categories}/>
 
         </div>
     )
 }
+    

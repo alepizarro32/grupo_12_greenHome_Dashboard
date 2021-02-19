@@ -1,0 +1,10 @@
+.home {
+    margin: 2% 2.5%;
+}
+
+@media (max-width: 768px){
+
+    .home{
+        margin: 5% 5%;
+    }
+}

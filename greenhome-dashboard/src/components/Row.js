@@ -1,14 +1,17 @@
 import '../App.css' ;
 import ContentLastProd from './LastProduct/ContentLastProd';
-import CategoryInDB from './Categorias/CategoryInDB';
 import CategoryContainer from './Categorias/CategoryContainer';
 import ProductCard from './Categorias/ProductCard'
-export default function Row() {
+
+
+
+
+export default function Row(props) {
 
 
     return(
         <div className="row">
-            <ContentLastProd />
+            <ContentLastProd data={props.products.last} />
             <CategoryContainer>
                 <ProductCard />
                 <ProductCard />
