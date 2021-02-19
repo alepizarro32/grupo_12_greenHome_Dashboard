@@ -10,19 +10,16 @@ export default function Home() {
     const [ products , setProducts ] = useState([]);
     const [ users, setUsers ] = useState([]);
 
-    const LoadData = () => {
-        
-            useEffect(()=>{
-                (products.length == 0) && fetch('http://localhost:3000/api/products').then(res => res.json()).then(results => setProducts(results));
-            });
+    
+        useEffect(()=>{
+            fetch('http://localhost:3000/api/products').then(res => res.json()).then(results => setProducts(results));
+        },[]);
 
-            useEffect(()=>{
-                (users.length == 0) && fetch('http://localhost:3000/api/users').then(res=> res.json()).then(results => setUsers(results))
-            })
+        useEffect(()=>{
+            fetch('http://localhost:3000/api/users').then(res=> res.json()).then(results => setUsers(results))
+        },[])
                 
-    }
 
-   LoadData()
 
     return(
         <div className='home'>
