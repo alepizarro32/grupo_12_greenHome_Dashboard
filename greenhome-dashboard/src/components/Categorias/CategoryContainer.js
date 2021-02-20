@@ -1,8 +1,9 @@
 import '../../App.css' ;
+import CategoryCard from './CategoryCard'
 
-import CategoryInDB from './CategoryInDB'
 export default function CategoryContainer(props){
-    console.log(props)
+    const categories = props.data.categories
+    console.log(categories)
     return(
         <div className="col-lg-6 mb-4">						
         <div className="card shadow mb-4">
@@ -11,7 +12,11 @@ export default function CategoryContainer(props){
             </div>
             <div className="card-body">
                     <div className="row">
-                        {props.children}
+                    {props.data.categories ? 
+                        categories.countByCategory.map(category=> {return <CategoryCard category={category}/>}) :
+                        <div class="spinner-border" role="status">
+                        <span class="sr-only">Loading...</span>
+                        </div> }
                     </div>
                 </div>
             </div>
@@ -19,4 +24,10 @@ export default function CategoryContainer(props){
 
     )
 
+}
+
+
+CategoryContainer.defaultProps = {
+    data: "",
+    categories: ''
 }
