@@ -26,18 +26,18 @@ function App() {
   return (
     <div className="App">
       <Home>
-      <ContentRow>
-                <QuantityProduct data={products} />
-                <QuantityProduct data={users}/>
-                <QuantityProduct data={products.categories}/>
-            </ContentRow> 
-            <ContentRow>
-                <ContentLastProd data={products.last} />
-                <CategoryContainer data={products}/>
-            </ContentRow> 
-            <ContentRow>
-                <ProductContainer data={products}/>
-            </ContentRow>
+        <ContentRow>
+            <QuantityProduct data={products} />
+            <QuantityProduct data={users}/>
+            <QuantityProduct data={products.categories}/>
+        </ContentRow> 
+        <ContentRow>
+            <ContentLastProd data={products.last} />
+            <CategoryContainer data={products}/>
+        </ContentRow> 
+          <ContentRow>
+            <ProductContainer data={products}/>
+          </ContentRow>
       </Home>
     </div>
   );
