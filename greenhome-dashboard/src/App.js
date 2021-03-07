@@ -20,11 +20,11 @@ function App() {
 
   
       useEffect(()=>{
-          fetch('http://localhost:3000/api/products').then(res => res.json()).then(results => setProducts(results));
+          fetch('https://greenhomearg.herokuapp.com/api/products').then(res => res.json()).then(results => setProducts(results));
       },[]);
 
       useEffect(()=>{
-          fetch('http://localhost:3000/api/users').then(res=> res.json()).then(results => setUsers(results))
+          fetch('https://greenhomearg.herokuapp.com/api/users').then(res=> res.json()).then(results => setUsers(results))
       },[])
 
 
