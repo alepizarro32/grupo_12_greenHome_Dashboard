@@ -20,11 +20,11 @@ function App() {
 
   
       useEffect(()=>{
-          fetch('https://greenhomearg.herokuapp.com/api/products').then(res => res.json()).then(results => setProducts(results));
+          fetch('https://greenhomeapp-production.up.railway.app/api/products').then(res => res.json()).then(results => setProducts(results));
       },[]);
 
       useEffect(()=>{
-          fetch('https://greenhomearg.herokuapp.com/api/users').then(res=> res.json()).then(results => setUsers(results))
+          fetch('https://greenhomeapp-production.up.railway.app/api/users').then(res=> res.json()).then(results => setUsers(results))
       },[])
 
 
